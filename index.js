@@ -20,7 +20,8 @@ app.get("/index", (req, res) => {
         console.log("start");
         exec(`node .${qsPath}/daemon.js start`);
         exec(`node .${ssPath}/daemon.js start`);
-    }else{
+    }
+    if(req.query.status == "stop"){
         console.log("stop");
         exec(`node .${qsPath}/daemon.js stop`);
         exec(`node .${ssPath}/daemon.js stop`);
